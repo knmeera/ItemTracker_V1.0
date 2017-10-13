@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ClassDemo.Models.ItemType>
+
+@{
+    ViewBag.Title = "ItemTypeView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ItemType</h2>
+
+<div>
+    @using (Html.BeginForm("ItemTypeView", "ItemType"))
+    {
+        <table>
+            <tr>
+                <td>Item Type Name &nbsp;</td>
+                <td>@Html.TextBox("ItemName", null, new { @class = "form-control" })</td>
+                <td><input type="submit" value="Add" class="btn-success" /></td>
+            </tr>
+        </table>
+       
+    }
+</div>
+<br />
+<div style="width:400px;">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Item Type Name </th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.ItemTypeId)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ItemName)</td>
+                    <td>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ItemTypeId }) |
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ItemTypeId })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

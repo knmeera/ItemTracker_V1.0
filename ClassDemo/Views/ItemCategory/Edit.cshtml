@@ -1,0 +1,31 @@
+﻿@model ClassDemo.Models.ItemCategory
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>ItemCategoryView</h2>
+
+
+<div>
+    @using (Html.BeginForm("Edit", "ItemCategory"))
+    {
+        <table>
+            <tr>
+                <td>Item Category Id</td>
+                <td>@Html.TextBoxFor(m=>m.CategoryId, new { @class = "form-control", @readonly = "null" })</td>
+            </tr>
+            <tr>
+                <td>Item Category Name</td>
+                <td>@Html.TextBoxFor(m=>m.CategoryName, new { @class = "form-control" })</td>
+            </tr>
+        </table>
+        <input type="submit" value="Add" class="btn-success" />
+    }
+</div>
+
+
+
+

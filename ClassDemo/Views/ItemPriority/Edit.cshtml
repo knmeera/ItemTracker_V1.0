@@ -1,0 +1,25 @@
+﻿@model ClassDemo.Models.ItemPriority
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<div>
+    @using (Html.BeginForm("Edit", "Item Priority"))
+    {
+        <table>
+            <tr>
+                <td>Item Priority Id</td>
+                <td>@Html.TextBoxFor(m => m.PriorityId, new { @class = "form-control", @readonly = "null" })</td>
+            </tr>
+            <tr>
+                <td>Item Priority Name</td>
+                <td>@Html.TextBoxFor(m=>m.PriorityName,new { @class = "form-control" })</td>
+            </tr>
+        </table>
+        <input type="submit" value="Add" class="btn-success" />
+    }
+</div>

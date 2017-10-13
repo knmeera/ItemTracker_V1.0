@@ -1,0 +1,25 @@
+﻿@model ClassDemo.Models.Project
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<div>
+    @using (Html.BeginForm("Edit", "Project"))
+    {
+        <table>
+            <tr>
+                <td>Project Id</td>
+                <td>@Html.TextBoxFor(m=>m.ProjectId,new{ @class = "form-control" , @readonly = "null"  })</td>
+            </tr>
+            <tr>
+                <td>Item Type Name</td>
+                <td>@Html.TextBox("ProjectName", null, new { @class = "form-control" })</td>
+            </tr>
+        </table>
+        <input type="submit" value="Add" class="btn-success" />
+    }
+</div>

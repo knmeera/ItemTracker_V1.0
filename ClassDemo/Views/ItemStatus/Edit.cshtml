@@ -1,0 +1,24 @@
+﻿@model ClassDemo.Models.ItemStatus
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+<div>
+    @using (Html.BeginForm("Edit", "ItemStatus"))
+    {
+        <table>
+            <tr>
+                <td>Item Status Id</td>
+                <td>@Html.TextBoxFor(m => m.ItemStatusId, new { @class = "form-control", @readonly = "null" })</td>
+            </tr>
+            <tr>
+                <td>Item Status Name</td>
+                <td>@Html.TextBoxFor(m=>m.ItemStatusName, new { @class = "form-control" })</td>
+            </tr>
+        </table>
+        <input type="submit" value="Add" class="btn-success" />
+    }
+</div>
